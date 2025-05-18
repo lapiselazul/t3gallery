@@ -3,6 +3,7 @@
 ## Todo list
 - [x] Make it deploy (vercel)
 - [x] Scaffold basic UI with mock data
+- [x] Tidy up build process
 - [ ] Setup db (vercel postgres)
 - [ ] Attach database to UI
 - [ ] Add authentication
