@@ -1,26 +1,11 @@
-import Image from "next/image";
-import { db } from "~/server/db";
+import Images from "./_components/Images";
 
 export const dynamic = "force-dynamic";
 
-export default async function HomePage() {
-  const images = await db.query.images.findMany({
-    orderBy: (model, { desc }) => desc(model.id),
-  });
-
+export default function HomePage() {
   return (
     <main className="">
-      <div className="flex flex-wrap gap-4">
-        {images.map((image, i) => (
-          <div
-            key={image.id + "-" + i}
-            className="flex h-48 w-48 flex-col items-center justify-between"
-          >
-            <img src={image.url} alt={image.name} />
-            <div>{image.name}</div>
-          </div>
-        ))}
-      </div>
+      <Images />
     </main>
   );
 }
