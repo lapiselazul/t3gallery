@@ -1,10 +1,12 @@
 import "~/styles/globals.css";
+import "@uploadthing/react/styles.css";
+
 
 import { type Metadata } from "next";
 import { Geist } from "next/font/google";
 
 import { ClerkProvider } from "@clerk/nextjs";
-import TopNav from "./_components/TopNav";
+import TopNav from "./_gallery/TopNav";
 
 export const metadata: Metadata = {
   title: "Image Gallery",

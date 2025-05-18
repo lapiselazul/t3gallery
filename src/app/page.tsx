@@ -1,4 +1,4 @@
-import Images from "./_components/Images";
+import Images from "./_gallery/Images";
 
 export const dynamic = "force-dynamic";
 
