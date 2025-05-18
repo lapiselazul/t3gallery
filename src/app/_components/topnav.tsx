@@ -1,4 +1,4 @@
-import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
 
 
 export function TopNav() {
@@ -6,8 +6,13 @@ export function TopNav() {
     <div className="flex w-full items-center justify-between border-b p-4 text-xl font-semibold">
       <div>Gallery</div>
       <div>
-        <SignedOut><SignedIn /></SignedOut>
-        <SignedIn><UserButton /></SignedIn>
+         <SignedOut>
+              <SignInButton />
+              <SignUpButton />
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
       </div>
     </div>
   );
