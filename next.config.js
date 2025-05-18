@@ -11,6 +11,9 @@ const config = {
     },
     eslint: {
         ignoreDuringBuilds: true,
+    },
+    images: {
+        remotePatterns: [new URL('https://1bnzlu4bs3.ufs.sh/**')]
     }
 };
 
