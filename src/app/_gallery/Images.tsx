@@ -1,15 +1,19 @@
-import { db } from "~/server/db";
+import { getUserImages } from "~/server/queries";
+
+export const dynamic = "force-dynamic";
 
 export default async function Images() {
-  const images = await db.query.images.findMany({
-    orderBy: (model, { desc }) => desc(model.id),
-  });
+  const images = await getUserImages();
+
+  if (!images) {
+    return null;
+  }
 
   return (
     <div className="flex flex-wrap gap-4">
-      {images.length === 0 && <p>Thank you for visiting, but the images are in another castle.</p>}
-      {images.length > 0 &&
-        images.map((image) => (
+    {images.length === 0
+      ? <p>Please upload an image.</p>
+      : images.map((image) => (
           <div
             key={image.id}
             className="flex h-48 w-48 flex-col items-center justify-between"
@@ -17,7 +21,8 @@ export default async function Images() {
             <img src={image.url} alt={image.name} />
             <div>{image.name}</div>
           </div>
-        ))}
+        ))    
+    }  
     </div>
   );
 }
