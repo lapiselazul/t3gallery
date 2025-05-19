@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { getUserImages } from "~/server/queries";
 
 export const dynamic = "force-dynamic";
@@ -18,14 +19,16 @@ export default async function Images() {
         images.map((image) => (
           <div
             key={image.id}
-            className="flex flex-col w-48 h-48 items-center justify-between relative"
+            className="flex w-48 h-48 flex-col items-center"
           >
-            <Image
-              src={image.url}
-              style={{ objectFit: "cover" }}
-              fill={true}
-              alt={image.name}
-            />
+            <Link href={`/img/${image.id}`}>
+              <Image
+                src={image.url}
+                width={192}
+                height={192}
+                alt={image.name}
+              />
+            </Link>
           </div>
         ))
       )}
