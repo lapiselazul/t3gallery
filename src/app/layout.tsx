@@ -5,7 +5,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
 
-import TopNav from "./_gallery/TopNav";
+import TopNav from "./_components/TopNav";
 import { ourFileRouter } from "./api/uploadthing/core";
 import "~/styles/globals.css";
 import "@uploadthing/react/styles.css";
