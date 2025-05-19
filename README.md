@@ -15,6 +15,7 @@
 - [ ] Delete button (w/ Server Actions)
 - [ ] Analytics (posthog)
 - [ ] Ratelimiting (upstash)
+- [ ] Replace uploadthing's console calls with a logger
 
 
 ## Instructions

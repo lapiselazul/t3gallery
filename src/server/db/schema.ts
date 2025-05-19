@@ -16,8 +16,9 @@ export const images = createTable(
   "image",
   (d) => ({
     id: d.integer().primaryKey().generatedByDefaultAsIdentity(),
-    name: d.varchar({ length: 256 }).notNull(),
-    url: d.varchar({ length: 1024 }).notNull(),
+    name: d.varchar("name", { length: 256 }).notNull(),
+    url: d.varchar("url", { length: 1024 }).notNull(),
+    userId: d.varchar("userId", { length: 256 }).notNull(),
     createdAt: d
       .timestamp({ withTimezone: true })
       .default(sql`CURRENT_TIMESTAMP`)
