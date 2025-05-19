@@ -6,7 +6,7 @@ export default async function Images() {
   const images = await getUserImages();
 
   if (!images) {
-    return null;
+    return <p className="text-center">Please sign in.</p>;
   }
 
   return (
