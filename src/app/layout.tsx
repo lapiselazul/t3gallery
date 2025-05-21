@@ -9,6 +9,7 @@ import TopNav from "./_components/TopNav";
 import { ourFileRouter } from "./api/uploadthing/core";
 import "~/styles/globals.css";
 import "@uploadthing/react/styles.css";
+import { Toaster } from "~/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "Image Gallery",
@@ -37,6 +38,7 @@ export default function RootLayout({
           </div>
 
           <div id="modal-root" />
+          <Toaster />
         </body>
       </html>
     </ClerkProvider>

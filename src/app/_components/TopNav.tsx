@@ -3,6 +3,7 @@
 import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import { UploadButton } from "../_utils/uploadthing";
 import { useRouter } from "next/navigation";
+import { toast } from "sonner";
 
 export default function TopNav() {
   const router = useRouter();
@@ -25,7 +26,15 @@ export default function TopNav() {
         <SignedIn>
           <UploadButton
             endpoint="imageUploader"
+            onUploadBegin={() => {
+              toast("Uploading...", { 
+                duration: 10000,
+                id: "upload-begin",
+              });
+            }}
             onClientUploadComplete={() => {
+              toast.dismiss("upload-begin");
+              toast("Upload complete!", { duration: 3000 });
               router.refresh();
             }}
           />
