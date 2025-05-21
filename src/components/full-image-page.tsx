@@ -7,7 +7,7 @@ export default async function FullPageImageView({ id }: { id: number }) {
   const user = await client.users.getUser(image.userId);
 
   return (
-    <div className="flex h-full w-full">
+    <div className="flex h-full w-full dragonball">
       <div className="flex min-w-0 flex-1 items-center justify-center">
         <img
           src={image.url}

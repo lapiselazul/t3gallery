@@ -21,6 +21,10 @@ dialog {
   max-height: 100vh;
 }
 
+.dragonball {
+  flex-direction: row;
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -134,5 +138,12 @@ dialog {
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+
+@media screen and (max-width: 1000px) {
+  .dragonball {
+    flex-direction: column;
   }
 }
