@@ -3,9 +3,7 @@ import { getImage } from "~/server/queries";
 
 export default async function FullPageImageView({ id }: { id: number }) {
   const image = await getImage(id);
-
   const client = await clerkClient();
-
   const user = await client.users.getUser(image.userId);
 
   return (
