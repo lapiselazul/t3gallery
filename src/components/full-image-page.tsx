@@ -4,13 +4,13 @@ export default async function FullPageImageView({ id }: { id: number }) {
   const image = await getImage(id);
 
   return (
-    <div className="flex h-full w-full min-w-0">
-      <div className="flex shrink justify-center items-center">
-      <img src={image.url} className="h-auto object-contain flex shrink" />
+    <div className="flex h-full w-full">
+      <div className="flex flex-1 items-center justify-center min-w-0">
+        <img src={image.url} className="object-contain max-w-full max-h-full" alt={image.name} />
       </div>
 
-      <div className="w-48 flex flex-col shrink-0 border-l">
-        <div className="text-xl font-bold">{image.name}</div>
+      <div className="flex flex-col w-96 shrink-0 border-l">
+        <div className="border-b text-center text-lg">{image.name}</div>
       </div>
     </div>
   );

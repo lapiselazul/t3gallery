@@ -16,7 +16,7 @@ export default async function Images() {
       {images.length === 0 ? (
         <p>Please upload an image.</p>
       ) : (
-        images.map((image) => (
+        [...images, ...images, ...images, ...images, ...images, ...images, ...images, ...images, ...images, ...images, ...images, ...images].map((image) => (
           <div key={image.id} className="block h-48 lg:h-64 w-48 lg:w-64 bg-red-300 text-center">
             <Link href={`/img/${image.id}`}>
               <Image
