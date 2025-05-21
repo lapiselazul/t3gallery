@@ -10,7 +10,6 @@ import { ourFileRouter } from "./api/uploadthing/core";
 import "~/styles/globals.css";
 import "@uploadthing/react/styles.css";
 import { Toaster } from "~/components/ui/sonner";
-import { PostHogProvider } from "./_analytics/provider";
 
 export const metadata: Metadata = {
   title: "Image Gallery",
@@ -30,7 +29,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geist.variable}`}>
       <ClerkProvider>
-        <PostHogProvider>
           <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
           <body>
             <div className="grid h-screen grid-rows-[auto_1fr]">
@@ -41,7 +39,6 @@ export default function RootLayout({
             <div id="modal-root" />
             <Toaster />
           </body>
-        </PostHogProvider>
       </ClerkProvider>
     </html>
   );

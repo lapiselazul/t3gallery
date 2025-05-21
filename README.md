@@ -14,7 +14,6 @@
 - [x] Routing/image page (parallel route)
 - [x] Add Shadcn toast (scanner)
 - [ ] Delete button (w/ Server Actions)
-- [x] Analytics (posthog)
 - [ ] Ratelimiting (upstash)
 - [ ] Replace uploadthing's console calls with a logger
 
