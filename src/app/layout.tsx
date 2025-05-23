@@ -29,16 +29,16 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${geist.variable}`}>
       <ClerkProvider>
-          <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
-          <body>
-            <div className="grid h-screen grid-rows-[auto_1fr]">
-              <TopNav />
-              <main className="overflow-y-auto">{children}</main>
-              {modal}
-            </div>
-            <div id="modal-root" />
-            <Toaster />
-          </body>
+        <NextSSRPlugin routerConfig={extractRouterConfig(ourFileRouter)} />
+        <body>
+          <div className="grid h-screen grid-rows-[auto_1fr]">
+            <TopNav />
+            <main className="overflow-y-auto">{children}</main>
+            {modal}
+          </div>
+          <div id="modal-root" />
+          <Toaster />
+        </body>
       </ClerkProvider>
     </html>
   );

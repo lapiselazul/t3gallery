@@ -12,7 +12,9 @@ export default async function Page({
     throw new Error("Invalid image id");
   }
 
-  return (<Modal>
-    <FullPageImageView id={idAsNumber} />
-  </Modal>);
+  return (
+    <Modal>
+      <FullPageImageView id={idAsNumber} />
+    </Modal>
+  );
 }

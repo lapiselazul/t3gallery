@@ -27,7 +27,7 @@ export default function TopNav() {
           <UploadButton
             endpoint="imageUploader"
             onUploadBegin={() => {
-              toast("Uploading...", { 
+              toast("Uploading...", {
                 duration: 10000,
                 id: "upload-begin",
               });

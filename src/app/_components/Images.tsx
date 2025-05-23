@@ -17,7 +17,7 @@ export default async function Images() {
         images.map((image) => (
           <div
             key={image.id}
-            className="block h-48 w-48 bg-red-300 text-center lg:h-64 lg:w-64"
+            className="block h-48 w-48 text-center lg:h-64 lg:w-64"
           >
             <Link href={`/img/${image.id}`} scroll={false}>
               <Image
