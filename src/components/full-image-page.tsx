@@ -2,6 +2,7 @@ import { auth, clerkClient } from "@clerk/nextjs/server";
 import { deleteImage, getImage } from "~/server/queries";
 import { Button } from "~/components/ui/button";
 import Image from "next/image";
+import { redirect } from "next/navigation";
 
 export default async function FullPageImageView({ id }: { id: number }) {
   const image = await getImage(id);
@@ -40,11 +41,17 @@ export default async function FullPageImageView({ id }: { id: number }) {
         {currentUser?.userId === image.userId && (
           <div className="p-4">
             <form
+              className="flex gap-2"
               action={async () => {
                 "use server";
                 await deleteImage(id);
               }}
             >
+              <Button type="button" variant="secondary" onClick={async () => {
+                "use server";
+                redirect("/");
+
+              }}>Go Back</Button>
               <Button type="submit" variant="destructive">
                 Delete
               </Button>
