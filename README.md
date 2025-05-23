@@ -14,9 +14,8 @@
 - [x] Error management (w/ Sentry)
 - [x] Routing/image page (parallel route)
 - [x] Add Shadcn toast (scanner)
-- [ ] Delete button (w/ Server Actions)
-- [ ] Ratelimiting (upstash)
-- [ ] Replace uploadthing's console calls with a logger
+- [x] Delete button (w/ Server Actions)
+- [x] Ratelimiting (upstash)
 
 ## Instructions
 
