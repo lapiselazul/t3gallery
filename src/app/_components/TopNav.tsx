@@ -4,13 +4,14 @@ import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import { UploadButton } from "../_utils/uploadthing";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import Link from "next/link";
 
 export default function TopNav() {
   const router = useRouter();
 
   return (
     <div className="flex w-full items-center justify-between border-b p-4 text-xl font-semibold">
-      <div>Image Gallery</div>
+      <div><Link href="/">Image Gallery</Link></div>
       <div className="flex flex-row items-center gap-4">
         <SignedOut>
           <p>Sign in to start uploading images.</p>

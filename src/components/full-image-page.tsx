@@ -1,6 +1,7 @@
 import { auth, clerkClient } from "@clerk/nextjs/server";
 import { deleteImage, getImage } from "~/server/queries";
 import { Button } from "~/components/ui/button";
+import Image from "next/image";
 
 export default async function FullPageImageView({ id }: { id: number }) {
   const image = await getImage(id);
@@ -11,11 +12,15 @@ export default async function FullPageImageView({ id }: { id: number }) {
 
   return (
     <div className="full-img-container flex h-full w-full">
-      <div className="flex min-w-0 flex-1 items-center justify-center">
-        <img
+      <div className="relative flex min-w-0 flex-1 items-center justify-center">
+        <Image
           src={image.url}
-          className="max-h-full max-w-full object-contain"
+          className="max-h-full max-w-full"
           alt={image.name}
+          fill={true}
+          style={{
+            objectFit: "contain"
+          }}
         />
       </div>
 
